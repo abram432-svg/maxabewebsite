@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #004225;
+            --secondary-color: #ffffff;
+            --text-color: #333;
+            --accent-color: #00693e;
+        }
+
+        .dark-theme {
+            --primary-color: #001a0f;
+            --secondary-color: #1a1a1a;
+            --text-color: #ffffff;
+            --accent-color: #00804b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 2%, transparent 40%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 2%, transparent 40%);
+            transition: background-color 0.5s ease;
+        }
+
+        .welcome-container {
+            background: var(--secondary-color);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 1000px;
+            width: 90%;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .side-image-container {
+            flex: 1;
+            max-width: 280px;
+            perspective: 1000px;
+        }
+
+        .side-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+
+        .side-image:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image-container {
+            flex: 1.2;
+            max-width: 320px;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-top: 1rem;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .bio-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .welcome-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #004225, transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .greeting {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.3s forwards;
+        }
+
+        p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.6s forwards;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 1s forwards;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 1.2s forwards;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--accent-color);
+        }
+
+        .typing-effect {
+            border-right: 3px solid var(--primary-color);
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-color) }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #004225;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.9s forwards;
+        }
+
+        .cta-button:hover {
+            background-color: #003319;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 66, 37, 0.3);
+        }
+
+        .game-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.9s forwards;
+        }
+
+        .game-button:hover {
+            background-color: #005c2f;
+            transform: scale(1.05) rotate(-3deg);
+            box-shadow: 0 5px 15px rgba(0, 66, 37, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .date-time {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .welcome-container {
+                padding: 2rem;
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .greeting {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="welcome-container">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <h1 class="typing-effect">Welcome</h1>
+        <div class="greeting" id="timeGreeting">Good day!</div>
+        
+        <div class="image-container">
+            <div class="side-image-container">
+                <img src="images/IMG_6415.jpeg" alt="Duluth Lighthouse at Sunset" class="side-image">
+                <div class="image-caption">Duluth's Historic Lighthouse</div>
+            </div>
+            
+            <div class="profile-image-container">
+                <img src="images/IMG_6098.jpeg" alt="Max Abramson" class="profile-image">
+            </div>
+            
+            <div class="side-image-container">
+                <img src="images/IMG_6287.jpeg" alt="Scenic Waterfall Trail" class="side-image">
+                <div class="image-caption">Hiking Adventures</div>
+            </div>
+        </div>
+
+        <p class="bio-text">
+            Hello! I'm Max Abramson, a sophomore studying Accounting at the University of Minnesota Duluth. 
+            When I'm not focused on my studies, you'll find me hiking trails, playing basketball, 
+            or enjoying the beautiful Lake Superior sunsets.
+        </p>
+
+        <a href="#" class="cta-button">Explore More</a>
+        <a href="game.html" class="game-button">
+            <i class="fas fa-gamepad"></i> Play Snake
+        </a>
+        <div class="social-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="date-time" id="currentDateTime"></div>
+    </div>
+
+    <script>
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        let isDark = false;
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            isDark = !isDark;
+            icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            
+            // Update particles color based on theme
+            const particlesColor = isDark ? '#00804b' : '#ffffff';
+            pJSDom[0].pJS.particles.color.value = particlesColor;
+            pJSDom[0].pJS.particles.line_linked.color = particlesColor;
+            pJSDom[0].pJS.fn.particlesRefresh();
+        });
+
+        // Dynamic greeting based on time of day
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            const greetingElement = document.getElementById('timeGreeting');
+            let greeting;
+
+            if (hour >= 5 && hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+
+            greetingElement.textContent = greeting;
+        }
+
+        // Update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit' 
+            };
+            document.getElementById('currentDateTime').textContent = 
+                now.toLocaleDateString('en-US', options);
+        }
+
+        // Mouse move parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const container = document.querySelector('.welcome-container');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            container.style.transform = `translateY(-10px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset parallax on mouse leave
+        document.addEventListener('mouseleave', () => {
+            const container = document.querySelector('.welcome-container');
+            container.style.transform = 'translateY(-10px) rotateY(0) rotateX(0)';
+        });
+
+        // Social links hover effect
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('mouseover', (e) => {
+                e.target.style.transform = `translateY(-5px) scale(1.2)`;
+            });
+            link.addEventListener('mouseout', (e) => {
+                e.target.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initial calls
+        updateGreeting();
+        updateDateTime();
+
+        // Update time every minute
+        setInterval(updateDateTime, 60000);
+        setInterval(updateGreeting, 60000);
+    </script>
+</body>
+</html>
