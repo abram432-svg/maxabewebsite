@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career - Max Abramson</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 3rem;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        /* Content */
+        .content {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .company-card {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #f5f5f7;
+            border-radius: 18px;
+        }
+
+        .company-card h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-card .position {
+            font-size: 1.125rem;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        .company-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .company-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+
+        .contact-item {
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            color: #6e6e73;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="nav-brand">Max Abramson</a>
+            <div class="nav-links">
+                <a href="hobbies.html">Hobbies</a>
+                <a href="discover.html">Discover</a>
+                <a href="resume.html">Resume</a>
+                <a href="career.html">Career</a>
+                <a href="game.html">Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Career Interests</h1>
+        <p class="subtitle">My Path to Audit Excellence</p>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+        <!-- RSM -->
+        <div class="company-card">
+            <h2>RSM US LLP</h2>
+            <p class="position">Audit Internship → Full-Time Audit Associate</p>
+
+            <h3>Contact Information</h3>
+            <div class="contact-box">
+                <div class="contact-item">RSM Minneapolis Office</div>
+                <div class="contact-item">225 South Sixth Street, Suite 2800, Minneapolis, MN 55402</div>
+                <div class="contact-item">(612) 376-9200</div>
+                <div class="contact-item">recruiting@rsmus.com</div>
+            </div>
+
+            <h3>Why I'm Interested</h3>
+            <p>
+                RSM is the perfect fit for launching my audit career. As the fifth-largest accounting firm in the U.S., 
+                RSM offers the resources and training of a major firm while maintaining a more personal, client-focused 
+                approach. Starting as a junior intern, I'll gain hands-on audit experience during busy season, with the 
+                opportunity to earn a return offer and transition into a full-time Audit Associate role.
+            </p>
+
+            <h3>My Qualifications</h3>
+            <p>
+                As a sophomore Accounting major at UMD's Labovitz School of Business, I'm building the technical foundation 
+                essential for audit work. My coursework has given me solid understanding of GAAP principles, financial 
+                statement preparation, and regulatory compliance. I'm committed to pursuing my CPA license and building 
+                a long-term career in public accounting.
+            </p>
+
+            <h3>Skills Alignment</h3>
+            <div class="skills-list">
+                <div class="skill-item">GAAP knowledge & Excel proficiency</div>
+                <div class="skill-item">Attention to detail & analytical mindset</div>
+                <div class="skill-item">Team collaboration</div>
+                <div class="skill-item">Time management</div>
+            </div>
+        </div>
+
+        <!-- CLA -->
+        <div class="company-card">
+            <h2>CliftonLarsonAllen (CLA)</h2>
+            <p class="position">Audit Internship → Full-Time Audit Associate</p>
+
+            <h3>Contact Information</h3>
+            <div class="contact-box">
+                <div class="contact-item">CLA Minneapolis Office</div>
+                <div class="contact-item">220 South Sixth Street, Suite 300, Minneapolis, MN 55402</div>
+                <div class="contact-item">(612) 376-4500</div>
+                <div class="contact-item">recruiting@CLAconnect.com</div>
+            </div>
+
+            <h3>Why I'm Interested</h3>
+            <p>
+                CLA represents an exceptional opportunity to start my audit career with one of the nation's top accounting 
+                firms. With deep roots in Minnesota and a strong reputation for client service, CLA offers the perfect 
+                environment to develop my skills. The goal of earning a return offer and transitioning to a full-time 
+                Audit Associate position excites me.
+            </p>
+
+            <h3>My Qualifications</h3>
+            <p>
+                My accounting education at UMD is preparing me well for CLA's audit practice. Through rigorous coursework, 
+                I'm developing the technical knowledge and critical thinking skills essential for audit work. I bring strong 
+                interpersonal skills and a client-service mindset that will serve me well at CLA.
+            </p>
+
+            <h3>Skills Alignment</h3>
+            <div class="skills-list">
+                <div class="skill-item">Audit procedures & standards</div>
+                <div class="skill-item">Clear communication skills</div>
+                <div class="skill-item">Critical thinking & problem-solving</div>
+                <div class="skill-item">CPA track commitment</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Max Abramson. All rights reserved.</p>
+    </footer>
+</body>
+</html>

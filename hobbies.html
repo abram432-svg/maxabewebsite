@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Max Abramson</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 3rem;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .content p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .image-card {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: scale(1.02);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.125rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="nav-brand">Max Abramson</a>
+            <div class="nav-links">
+                <a href="hobbies.html">Hobbies</a>
+                <a href="discover.html">Discover</a>
+                <a href="resume.html">Resume</a>
+                <a href="career.html">Career</a>
+                <a href="game.html">Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>My Hobbies</h1>
+        <p class="subtitle">Exploring Nature, One Trail at a Time</p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <p>
+            My favorite hobbies revolve around hiking and being immersed in nature. There's something incredibly 
+            peaceful and rejuvenating about exploring trails, breathing in fresh mountain air, and witnessing 
+            breathtaking views from high elevations. Whether it's the challenge of a steep ascent or the serenity 
+            of walking through a forest, hiking allows me to disconnect from the busy world and reconnect with 
+            myself and the natural environment around me.
+        </p>
+
+        <p>
+            Some of my most memorable hiking experiences include climbing Mt. Josephine on the border of Canada, 
+            where the rugged terrain and stunning vistas made every step worthwhile. The sense of accomplishment 
+            upon reaching the summit, combined with the panoramic views of the surrounding wilderness, is something 
+            I'll never forget. Another unforgettable adventure was climbing Mt. Pilchuck in Washington, where the 
+            trail led through beautiful alpine meadows and rocky outcrops before revealing spectacular views from 
+            the historic fire lookout at the top.
+        </p>
+
+        <h2 style="font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin: 3rem 0 1.5rem; text-align: center;">Why This Matters to Me</h2>
+        
+        <p>
+            Hiking and spending time in nature are more than just hobbies to me—they're essential to my well-being 
+            and personal growth. In our fast-paced, technology-driven world, these outdoor adventures provide a 
+            crucial balance to my academic life and future career in accounting. When I'm on a trail, surrounded 
+            by towering trees or standing at a mountain summit, I find clarity and perspective that's impossible 
+            to achieve anywhere else.
+        </p>
+
+        <p>
+            These experiences have taught me valuable lessons about perseverance, patience, and the importance of 
+            taking things one step at a time—qualities that translate directly to my studies and professional goals. 
+            The physical challenge of hiking keeps me healthy and energized, while the mental peace I find in nature 
+            helps me manage stress and maintain focus. Most importantly, these adventures remind me that there's 
+            more to life than spreadsheets and deadlines. They keep me grounded, humble, and grateful for the 
+            natural beauty that surrounds us.
+        </p>
+    </section>
+
+    <!-- Image Grid -->
+    <div class="image-grid">
+        <div class="image-card">
+            <img src="images/IMG_5269.jpeg" alt="Tunnel Falls Hike">
+            <div class="image-caption">Tunnel Falls - Oregon</div>
+        </div>
+        <div class="image-card">
+            <img src="images/IMG_6060.jpeg" alt="Mt. Pilchuck Hike">
+            <div class="image-caption">Mt. Pilchuck - Washington</div>
+        </div>
+        <div class="image-card">
+            <img src="images/IMG_6439.jpg" alt="Mt. Josephine Hike">
+            <div class="image-caption">Mt. Josephine - MN</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Max Abramson. All rights reserved.</p>
+    </footer>
+</body>
+</html>

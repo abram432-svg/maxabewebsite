@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover UMD - Max Abramson</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 3rem;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Video Container */
+        .video-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #f5f5f7;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .video-placeholder-text {
+            text-align: center;
+            color: #86868b;
+            font-size: 1rem;
+        }
+
+        /* Highlights Grid */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .highlight-card {
+            background: #f5f5f7;
+            padding: 2rem;
+            border-radius: 18px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: scale(1.02);
+        }
+
+        .highlight-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .highlight-card p {
+            font-size: 1rem;
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.125rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="nav-brand">Max Abramson</a>
+            <div class="nav-links">
+                <a href="hobbies.html">Hobbies</a>
+                <a href="discover.html">Discover</a>
+                <a href="resume.html">Resume</a>
+                <a href="career.html">Career</a>
+                <a href="game.html">Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover UMD</h1>
+        <p class="subtitle">University of Minnesota Duluth</p>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Why I Chose UMD</h2>
+        <p>
+            Choosing the University of Minnesota Duluth was one of the best decisions I've made. The natural 
+            surroundings of Duluth, with its proximity to Lake Superior and countless hiking trails, provide 
+            the perfect environment for someone who loves the outdoors as much as I do. Beyond the stunning 
+            scenery, the Labovitz School of Business and Economics offers an exceptional accounting program 
+            with excellent job placement rates, giving me confidence in my future career prospects.
+        </p>
+        <p>
+            Additionally, being close to home allows me to maintain strong connections with my family while 
+            pursuing my education and personal growth. UMD truly offers the perfect balance of academic 
+            excellence, natural beauty, and personal convenience.
+        </p>
+    </section>
+
+    <!-- Video Container -->
+    <div class="video-container">
+        <div class="video-placeholder">
+            <div class="video-placeholder-text">
+                <p>Video placeholder</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Highlights Grid -->
+    <div class="highlights">
+        <div class="highlight-card">
+            <h3>Natural Beauty</h3>
+            <p>Surrounded by Lake Superior and endless trails</p>
+        </div>
+        <div class="highlight-card">
+            <h3>Labovitz School</h3>
+            <p>Top-tier business education with excellent placement</p>
+        </div>
+        <div class="highlight-card">
+            <h3>Close to Home</h3>
+            <p>Perfect proximity to family connections</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Max Abramson. All rights reserved.</p>
+    </footer>
+</body>
+</html>

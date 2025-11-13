@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Max Abramson</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #6e6e73;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: #6e6e73;
+            margin-bottom: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0071e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 980px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #0077ed;
+        }
+
+        /* Content */
+        .content {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f5f5f7;
+            border-radius: 18px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-size: 1rem;
+            color: #6e6e73;
+        }
+
+        .item-date {
+            color: #6e6e73;
+            font-size: 0.875rem;
+        }
+
+        .item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .item li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: #f5f5f7;
+            padding: 1.5rem;
+            border-radius: 18px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            color: #6e6e73;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="nav-brand">Max Abramson</a>
+            <div class="nav-links">
+                <a href="hobbies.html">Hobbies</a>
+                <a href="discover.html">Discover</a>
+                <a href="resume.html">Resume</a>
+                <a href="career.html">Career</a>
+                <a href="game.html">Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Max Abramson</h1>
+        <p class="subtitle">Accounting Student | Future CPA</p>
+        <div class="contact-info">
+            <span>maxabe06@gmail.com</span>
+            <span>(612) 450-2451</span>
+            <span>LinkedIn</span>
+        </div>
+        <a href="Max Abramson Resume (6).pdf" download class="download-btn">Download PDF</a>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">University of Minnesota Duluth</div>
+                        <div class="item-subtitle">Bachelor of Science in Accounting</div>
+                    </div>
+                    <div class="item-date">Expected May 2027</div>
+                </div>
+                <ul>
+                    <li>Current GPA: 3.5/4.0</li>
+                    <li>Dean's List: Fall 2023, Spring 2024</li>
+                    <li>Member: Accounting Club, Business Student Association</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Accounting Intern</div>
+                        <div class="item-subtitle">Local CPA Firm, Minneapolis, MN</div>
+                    </div>
+                    <div class="item-date">Summer 2024</div>
+                </div>
+                <ul>
+                    <li>Assisted with preparation of individual and business tax returns</li>
+                    <li>Performed data entry and reconciliation of client financial records</li>
+                    <li>Gained exposure to audit procedures and financial statement analysis</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical</h3>
+                    <ul>
+                        <li>Microsoft Excel</li>
+                        <li>QuickBooks</li>
+                        <li>Financial Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Accounting</h3>
+                    <ul>
+                        <li>GAAP Principles</li>
+                        <li>Financial Statements</li>
+                        <li>Audit Procedures</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Attention to Detail</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Max Abramson. All rights reserved.</p>
+    </footer>
+</body>
+</html>
