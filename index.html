@@ -17,6 +17,7 @@
             background: #ffffff;
             color: #1d1d1f;
             overflow-x: hidden;
+            line-height: 1.5;
         }
 
         /* Navigation */
@@ -73,7 +74,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 5rem 2rem 2rem;
+            padding: 8rem 2rem 4rem; /* Increased top padding slightly */
             text-align: center;
         }
 
@@ -86,7 +87,7 @@
         }
 
         .hero .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.5rem; /* Slightly larger */
             font-weight: 400;
             color: #6e6e73;
             margin-bottom: 2rem;
@@ -97,10 +98,10 @@
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 1.5rem;
             max-width: 1200px;
             width: 100%;
-            margin: 3rem auto;
+            margin: 2rem auto 4rem;
             padding: 0 2rem;
         }
 
@@ -110,6 +111,7 @@
             border-radius: 18px;
             overflow: hidden;
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .image-card:hover {
@@ -122,42 +124,54 @@
             object-fit: cover;
         }
 
-        /* Bio Section */
+        /* Bio Section / Professional Intro */
         .bio-section {
             max-width: 800px;
-            margin: 4rem auto;
+            margin: 0 auto 5rem;
             padding: 0 2rem;
             text-align: center;
         }
 
-        .bio-section p {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            color: #1d1d1f;
-            font-weight: 400;
+        .bio-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
         }
 
-        /* Video Container - Added for Home Page */
+        .bio-section p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #424245; /* Slightly softer black for reading */
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Video Container */
         .video-container {
-            max-width: 350px; /* Keeps vertical video looking nice */
-            margin: 0 auto 4rem;
+            max-width: 350px;
+            margin: 0 auto 5rem;
             padding: 0 2rem;
             text-align: center;
         }
         
         iframe {
              border-radius: 18px;
-             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         /* Footer */
         footer {
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
             color: #6e6e73;
             font-size: 0.875rem;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
-            margin-top: 4rem;
+            background: #fbfbfd;
         }
 
         /* Responsive */
@@ -175,16 +189,12 @@
             }
 
             .hero .subtitle {
-                font-size: 1.125rem;
+                font-size: 1.25rem;
             }
 
             .image-grid {
                 grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-
-            .bio-section p {
-                font-size: 1.125rem;
+                gap: 1rem;
             }
         }
 
@@ -194,15 +204,11 @@
             }
 
             .hero {
-                padding: 5rem 1rem 3rem;
+                padding: 6rem 1rem 3rem;
             }
 
             .hero h1 {
                 font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1rem;
             }
 
             .image-grid {
@@ -228,29 +234,36 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Welcome</h1>
+        <h1>Max Abramson</h1>
         <p class="subtitle">Student & Aspiring Accountant</p>
     </section>
 
     <!-- Image Grid -->
     <div class="image-grid">
         <div class="image-card">
-            <img src="images/IMG_6287.jpeg" alt="Tunnel Falls, Oregon">
+            <!-- Note: Ensure these image paths are correct relative to your HTML file -->
+            <img src="images/IMG_6287.jpeg" alt="Tunnel Falls, Oregon" onerror="this.src='https://placehold.co/600x400?text=Nature+Shot'">
         </div>
         <div class="image-card">
-            <img src="images/IMG_6415.jpeg" alt="Duluth lighthouse at sunset">
+            <img src="images/IMG_6415.jpeg" alt="Duluth lighthouse at sunset" onerror="this.src='https://placehold.co/600x400?text=Duluth+Sunset'">
         </div>
         <div class="image-card">
-            <img src="images/IMG_6098.jpeg" alt="Max Abramson">
+            <img src="images/IMG_6098.jpeg" alt="Max Abramson" onerror="this.src='https://placehold.co/600x400?text=Max+Abramson'">
         </div>
     </div>
 
     <!-- Bio Section -->
     <section class="bio-section">
+        <h2>About Me</h2>
         <p>
             Hello! I'm Max Abramson, a sophomore studying Accounting at the University of Minnesota Duluth. 
             When I'm not focused on my studies, you'll find me hiking trails, playing basketball, 
             or enjoying the beautiful Lake Superior sunsets.
+        </p>
+        <p>
+            I built this site to give you a look into both my professional and personal life. 
+            Feel free to browse my <strong>Resume</strong> and <strong>Career</strong> pages to see my academic progress, 
+            or visit the <strong>Hobbies</strong> and <strong>Discover</strong> sections to see what I'm up to outside the classroom.
         </p>
     </section>
 
