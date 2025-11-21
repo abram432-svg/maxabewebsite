@@ -137,6 +137,19 @@
             font-weight: 400;
         }
 
+        /* Video Container - Added for Home Page */
+        .video-container {
+            max-width: 350px; /* Keeps vertical video looking nice */
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        iframe {
+             border-radius: 18px;
+             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
         /* Footer */
         footer {
             padding: 2rem;
@@ -240,6 +253,19 @@
             or enjoying the beautiful Lake Superior sunsets.
         </p>
     </section>
+
+    <!-- YouTube Video Container -->
+    <div class="video-container">
+        <iframe 
+            width="315" 
+            height="560" 
+            src="https://www.youtube.com/embed/94UFLVSBsqY" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
 
     <!-- Footer -->
     <footer>
